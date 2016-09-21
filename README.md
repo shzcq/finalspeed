@@ -1,19 +1,27 @@
 FinalSpeed服务端安装及教程
 
+
 说明
+
 1.FinalSpeed必须服务端和客户端同时配合使用,否则没有任何加速效果.
+
 2.服务器64M-128M内存即可稳定运行,搬瓦工由于存在超售问题至少要256M.
+
 3.openvz架构只支持udp协议.
+
 4.服务端可以和锐速共存,互不影响.
  FinalSpeed服务端Linux版 (支持CentOS,Ubuntu,Debian)
 
 注意问题
+
 1.服务端会启动iptables,如果服务器修改过ssh端口,请先开放ssh端口,否则可能导致ssh连接失败.
+
 开放端口命令
 service iptables start
 iptables -I INPUT -p tcp –dport 端口号 -j ACCEPT
 iptables -I OUTPUT -p tcp –sport 端口号 -j ACCEPT
 service iptables save
+
 2.不熟悉不要乱改配置,如果无法连接,请卸载后一键安装,不要做任何修改,按照教程操作.
 国外服务器一键安装：
 rm -f install_fs.sh
